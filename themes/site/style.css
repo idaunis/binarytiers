@@ -1,0 +1,58 @@
+/* HTML elements */
+body {margin: 0; padding: 0; color: #000; background-color: #fff; font: 76% Arial, Helvetica, sans-serif; font-size:12px;}
+tr.odd td, tr.even td {padding: 0.3em;}
+h1, h2, h3, h4, h5, h6 {margin-bottom: 0.5em;}
+h1 {font-size: 1.3em;}
+h2 {font-size: 1.2em;}
+h3, h4, h5, h6 {font-size: 1.1em;}
+p {margin-top: 0.5em; margin-bottom: 0.9em;}
+a {text-decoration: none;font-weight: bold;}
+a:link {color: #0155AB;}
+a:visited {color: #369;}
+a:hover {color: #0155AB; text-decoration: underline;}
+fieldset {border: 1px solid #ccc;}
+pre {background-color: #eee;padding: 0.75em 1.5em;font-size: 12px;border: 1px solid #ddd;}
+table {font-size: 1em;}
+.form-item label {font-size: 1em;color: #222;}
+.item-list .title {font-size: 1em; color: #222;}
+.links {margin-bottom: 0em;}
+.comment .links {margin-bottom: 0em;}
+
+/* Page layout */
+#content {width: 100%;}
+#menu {background: #FFFFFF url(img/wse2.gif) repeat-x; padding: 0.5em 0.5em 0 0.5em; text-align: right; vertical-align: middle;}
+#main {padding: 10px; width:945px; text-align: left}
+.node .content, .comment .content {line-height: 1.4;}
+#help {font-size: 0.9em; margin-bottom: 1em;}
+.breadcrumb {margin-bottom: .5em;}
+.messages {background-color: #eee; border: 1px solid #ccc; padding: 0.3em; margin-bottom: 1em;}
+.error {border-color: red;}
+#sidebar-left, #sidebar-right {background-color: #ddd; width: 16em; padding: 10px; vertical-align: top;}
+
+/* Child classes of node, comment, block, etc. */
+.title, .title a {font-weight: bold; font-size: 1.3em; color: #777; margin: 0 auto 0 auto;}
+.submitted {color: #999; font-size: 0.8em;}
+.links {color: #999;}
+.links a {font-weight: bold;}
+.block {padding: 0 0 1.5em 0; border-bottom: 1px solid #bbb; padding-bottom: 0.75em; margin-bottom: 1.5em;}
+.block .title {margin-bottom: .25em;}
+.node {margin: .5em 0 2em 0;}
+.sticky {padding: .5em; background-color: #eee; border: solid 1px #ddd;}
+.node .content, .comment .content {margin: .5em 0 .5em 0;}
+.node .taxonomy {color: #999; font-size: 0.8em; padding: 1.5em;}
+.node .picture {border: 1px solid #ddd; float: right; margin: 0.5em;}
+.comment {border: 1px solid #abc; padding: .5em; margin-bottom: 1em;}
+.comment .title a {font-size: 1.1em; font-weight: normal;}
+.comment .new {text-align: right; font-weight: bold; font-size: 0.8em; float: right; color: red;}
+.comment .picture {border: 1px solid #abc; float: right; margin: 0.5em;}
+.item-list .pager {clear: both; text-align: center;}
+.item-list .pager .pager-item {display:inline; list-style-type:none; margin: 0px 2px;}
+.item-list .pager .pager-item div {display:inline; margin: 0px 2px;}
+.item-list .pager .pager-item2 {display:inline; list-style-type:none; font-weight: bold; color: #39c; margin: 0px 2px;}
+.item-list .pager .pager-item2 div {display:inline; margin: 0px 2px;}
+
+/* Model specific styles */
+#aggregator .feed-source {background-color: #eee; border: 1px solid #ccc; padding: 1em; margin: 1em 0 1em 0;}
+#aggregator .news-item .categories, #aggregator .source, #aggregator .age {color: #999; font-style: italic; font-size: 0.9em;}
+#aggregator .title {margin-bottom: 0.5em; font-size: 1em;}
+#aggregator h3 {margin-top: 1em;}

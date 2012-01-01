@@ -1,0 +1,104 @@
+ABOUT BINARYTIERS
+-----------------
+
+BinaryTiers is an open source, high-performance C++ web application framework
+that implements the Model-View-Controller (MVC) architecture pattern. 
+BinaryTiers is designed to be fast, robust, secure and easy to scale.
+
+BinaryTiers is designed keeping processing time in mind, saving energy and 
+computing resources. BinaryTiers web applications range from personal blogs to
+large social networking websites.
+
+BinaryTiers framework is organized in a set of highly optimized C++ functions 
+that compile your web application in a single and portable executable, 
+allowing the creation of high performance cross-platform machine compiled web 
+applications.
+
+ARCHITECTURE PATTERN
+--------------------
+
+BinaryTiers implements the architecture pattern Model-View-Controller (MVC)
+
+Models encapsulate the business logic and the data objects of your web 
+application, in BinaryTiers models are normally backed by a data store. 
+Models can be easily extended and they permit and independent development, 
+testing and maintenance.
+
+The View is composed of "themes" that are responsible for providing appropriate
+representations of your application interface. Themes are CPP files with 
+embedded HTML.
+
+The Controllers are responsible for handling incoming HTTP requests and send 
+the response. This response can be processed by the View, or sent directly to 
+the output in order to generate XML, JSON, etc. Controllers can provide a 
+direct response or a pre-processed response, commonly used in form validations.
+
+GETTING STARTED
+---------------
+
+1. Make sure that you have the following programs and libraries installed:
+
+     g++
+     mysql client
+     redis
+     expat
+     pcre
+
+2. Make sure hiredis is installed properly
+
+     cd ~/redis-2.4.5/deps/hiredis
+     make install INSTALL_INC=/usr/include INSTALL_LIB=/usr/lib
+
+3. If you are using MySQL, create an empty database, if you are using REDIS you
+   can skip this step: You must create an empty database for BinaryTiers, make 
+   sure the database user has the rights to use the BinaryTiers database.
+   
+     mysqladmin -u MY_DATA_BASE_USER -p create MY_DATA_BASE_NAME
+
+4. Get the source code and build the core:
+
+     wget http://www.binarytiers.org/download/binarytiers-2.4.2.tar.gz
+     tar -xvzf binarytiers-2.4.2.tar.gz
+     cd binarytiers/lib
+     make
+
+5. Configure and Build BinaryTiers for the first time:
+
+     cd ../src
+     vi settings.h
+     make
+
+6. Configure the Web Server: If you are using Apache, make sure to specify the 
+   path of BinaryTiers in the file: /etc/httpd/conf/httpd.conf
+   
+     <VirtualHost *:80>
+      ServerName mysite.domain
+      ServerAlias mysite.domain
+      DocumentRoot "/MY_BINARYTIERS_PATH/"
+      DirectoryIndex bt.bin
+      <Directory />
+       Options Indexes MultiViews FollowSymLinks
+       AllowOverride All
+       Order allow,deny
+       Allow from all
+      </Directory>
+      ScriptAlias /cgi-bin/ "/MY_BINARYTIERS_PATH/"
+     </VirtualHost>
+
+7. Configure your web application: Point your browser to http://mysite.domain
+   and follow the steps
+
+DOCUMENTATION
+-------------
+
+You can find detailed documentation at: http://www.binarytiers.org/
+
+LICENSE
+-------
+
+BinaryTiers is available open-source under the terms of the Apache 2 License.
+
+Commercial Licenses are also available for the development of projects where 
+you need to safeguard your development investment to secure your competitive 
+advantage, plus it ensures that someone is there for you when you need help. 
+Please contact Uselabs (http://www.uselabs.com/contact) for more details.

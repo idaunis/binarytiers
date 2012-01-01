@@ -1,0 +1,16 @@
+DirectoryIndex cgi-bin/bt.bin
+
+<Files ~ "\.(cpp|c|h|hpp)$">
+  order allow,deny
+  deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+    
+  # Rewrite URLs of the form 'x' to the form 'index.php?q=x'.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !=/favicon.ico
+  RewriteRule ^(.*)$ cgi-bin/bt.bin?q=$1 [L,QSA]
+</IfModule>
