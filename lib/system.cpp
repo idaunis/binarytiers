@@ -558,7 +558,7 @@ string system_build()
 		dirclose( handle );
 	}
 
-	string ldflags = variable_get("build_ldflags", "-lfcgi -lgd -lz -lpcre -lexpat");
+	string ldflags = variable_get("build_ldflags", "-lfcgi -lssl -lgd -lz -lpcre -lexpat");
 
 	out = "\
 CC = gcc\n\
@@ -566,7 +566,7 @@ CXX = g++\n\
 CFLAGS = -Os\n\
 CCFLAGS = \n\
 INCLUDES = -I/usr/include/mysql -I../src/pcre\n\
-LDFLAGS = -L/usr/lib/mysql -lmysqlclient -L../lib -lbt "+ldflags+"\n\
+LDFLAGS = -L../lib -lbt -L/usr/lib/mysql -lmysqlclient "+ldflags+"\n\
 OBJECTS = main.o" + objects + "\n\
 \n\
 bt.build.bin : $(OBJECTS)\n\
