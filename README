@@ -57,7 +57,7 @@ GETTING STARTED
 
 4. Get the source code and build the core:
 
-     wget http://www.binarytiers.org/download/binarytiers-2.4.2.tar.gz
+     wget http://www.binarytiers.org/files/binarytiers-2.4.2.tar.gz
      tar -xvzf binarytiers-2.4.2.tar.gz
      cd binarytiers/lib
      make
