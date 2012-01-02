@@ -3,7 +3,7 @@ CXX = g++
 CFLAGS = -Os
 CCFLAGS = 
 INCLUDES = -I/usr/include/mysql -I../src/pcre
-LDFLAGS = -L../lib -lbt -L/usr/lib/mysql -lmysqlclient -lfcgi -lgd -lz -lpcre -lexpat
+LDFLAGS = -L../lib -lbt -L/usr/lib/mysql -lmysqlclient -lfcgi -lssl -lgd -lz -lpcre -lexpat -lhiredis
 OBJECTS = main.o example.o admin.o site.o
 
 bt.build.bin : $(OBJECTS)

@@ -558,7 +558,7 @@ string system_build()
 		dirclose( handle );
 	}
 
-	string ldflags = variable_get("build_ldflags", "-lfcgi -lssl -lgd -lz -lpcre -lexpat");
+	string ldflags = variable_get("build_ldflags", "-lfcgi -lssl -lgd -lz -lpcre -lexpat -lhiredis");
 
 	out = "\
 CC = gcc\n\
