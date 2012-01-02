@@ -12,6 +12,7 @@ build/vc8/lib/
 *.bin
 *.ilk
 *.a
+*.lib
 *.ncb
 *.user
 
