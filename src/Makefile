@@ -3,8 +3,8 @@ CXX = g++
 CFLAGS = -Os
 CCFLAGS = 
 INCLUDES = -I/usr/include/mysql -I../src/pcre
-LDFLAGS = -L../lib -lbt -L/usr/lib/mysql -lmysqlclient -lfcgi -lssl -lgd -lz -lpcre -lexpat -lhiredis
-OBJECTS = main.o website.o admin.o site.o
+LDFLAGS = -L../lib -lbt -L/usr/lib/mysql -lmysqlclient -lfcgi -lgd -lz -lpcre -lexpat
+OBJECTS = main.o example.o admin.o site.o
 
 bt.build.bin : $(OBJECTS)
 	$(CXX) $(CFLAGS) $(CCFLAGS) $(OBJECTS) $(LDFLAGS) -o ./bt.build.bin
@@ -15,8 +15,8 @@ bt.build.bin : $(OBJECTS)
 main.o : ../src/main.cpp ../src/settings.h
 	$(CXX) $(CFLAGS) $(CCFLAGS) $(INCLUDES) -c ../src/main.cpp
 
-website.o : main.o ../src/website.cpp
-	$(CXX) $(CFLAGS) $(CCFLAGS) $(INCLUDES) -c ../src/website.cpp
+example.o : main.o ../src/example.cpp
+	$(CXX) $(CFLAGS) $(CCFLAGS) $(INCLUDES) -c ../src/example.cpp
 admin.o : main.o ../themes/admin/admin.cpp
 	$(CXX) $(CFLAGS) $(CCFLAGS) $(INCLUDES) -c ../themes/admin/admin.cpp
 site.o : main.o ../themes/site/site.cpp
