@@ -1,5 +1,5 @@
 /* 
-** Copyright (C) 2011 Uselabs and/or its subsidiary(-ies).
+** Copyright (C) 2012 Uselabs and/or its subsidiary(-ies).
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -5510,7 +5510,7 @@ string xml_data( const XML_Char *s, int len )
 
 /**
  * @mainpage BinaryTiers Manual
- * BinaryTiers is a C++ web application framework that implements the Model-View-Controller (MVC) pattern and a Content Management System (CMS) for the new era of virtualization.\n\n
+ * BinaryTiers is an open source, high-performance C++ web application framework that implements the Model-View-Controller (MVC) architecture pattern. BinaryTiers is designed to be fast, robust, secure and easy to scale.\n\n
  * BinaryTiers is designed keeping processing time in mind, saving energy and computing resources. BinaryTiers web applications range from personal blogs to large social networking websites.\n\n
  * BinaryTiers framework is organized in a set of highly optimized C++ functions that compile your web application in a single and portable executable, allowing the creation of high performance cross-platform machine compiled web applications.\n\n
  * This manual is divided in the following sections:\n
@@ -5583,6 +5583,7 @@ string xml_data( const XML_Char *s, int len )
  * To use BinaryTiers in Unix-like systems you will need the following packages:\n
  * <ul>
  * <li>g++</li> 
+ * <li>redis</li>
  * <li>mysql-devel</li>
  * <li>expat-devel</li>
  * <li>pcre-devel</li>
@@ -5603,9 +5604,7 @@ string xml_data( const XML_Char *s, int len )
  * sudo apt-get install g++
  * sudo apt-get install libmysqlclient15-dev
  * sudo apt-get install libgd2-noxpm-dev
- * sudo apt-get install libpcre3-dev
- * sudo apt-get install libexpat1-dev
- * sudo apt-get install libfcgi-dev
+ * sudo apt-get install libpcre3-dev libexpat1-dev libfcgi-dev libssl-dev
  * @endcode 
  * @section sec10-2 Installing Requirements on Windows
  * To use BinaryTiers in Windows you will need the following:\n
@@ -5617,6 +5616,7 @@ string xml_data( const XML_Char *s, int len )
  * </ul>
  * If your copy of BinaryTiers don't have these libraries, you can obtain the libraries from here:
  * <ul>
+ * <li>Redis from: http://redis.io</li>
  * <li>MySQL Server from: http://dev.mysql.com/downloads/mysql/</li>
  * <li>Pcre for Windows developer files: http://gnuwin32.sourceforge.net/packages/pcre.htm</li>
  * <li>Expat for Windows: http://expat.sourceforge.net/</li>
@@ -5625,13 +5625,13 @@ string xml_data( const XML_Char *s, int len )
  * @section sec12 Getting the Source Code
  * 
  * @code
- * wget http://www.uselabs.com/download/bt.tar.gz
- * tar -xvzf bt.tar.gz
+ * wget http://www.binarytiers.org/files/binarytiers-2.4.2.tar.gz
+ * tar -xvzf binarytiers-2.4.2.tar.gz
  * @endcode
  * @section sec13 Building the Core
  * The first build of the core has to be done at the command prompt; successive builds might be done using the CMS:
  * @code
- * cd bt/lib
+ * cd binarytiers/lib
  * make
  * @endcode
  * @note On Windows you'll have to build the project btcore.vcproj
@@ -5653,6 +5653,8 @@ string xml_data( const XML_Char *s, int len )
  * char * DB_USER         = "MY_DATA_BASE_USER";
  * char * DB_PASSW        = "MY_DATA_BASE_PASSWORD";
  * char * DB_NAME         = "MY_DATA_BASE_NAME";
+ * int    DB_TYPE         = 1; // 1:Redis, 2:Mysql
+ * int    DB_INDEX        = 0; // Redis Database
  * char * SENDMAIL_HOST   = "localhost";
  * char * SENDMAIL_FROM   = "admin@localhost";
  * char * TEMP_PATH       = "\tmp\";
@@ -5689,7 +5691,7 @@ string xml_data( const XML_Char *s, int len )
  */
 
 /** 
- * @page page2 Architecture pattern
+ * @page page2 Architecture Pattern
  * BinaryTiers implements the architecture pattern Model-View-Controller (MVC)
  * @section sec2-1 Models
  * Models encapsulate the business logic and the data objects of your web application, in BinaryTiers models are normally backed by a database. Models can be easily extended and they permit an independent development, testing and maintenance.
@@ -5701,7 +5703,7 @@ string xml_data( const XML_Char *s, int len )
  */
 
 /** 
- * @page page3 Getting stared
+ * @page page3 Getting Stared
  * Follow the guidelines to start developing your web application. We'll keep updating this section, but for now you may find the following resources a good starting point:
  * <ul>
  * <li>@ref group12</li>
@@ -5711,7 +5713,7 @@ string xml_data( const XML_Char *s, int len )
  */
 
 /** 
- * @page page7 History
+ * @page page7 Why C++
  * After allot of research of trying to find what is the best language for Web App development. We realized that all the interpreted languages were either created for fun of the language designers or to solve problems that originally had nothing to do with modern Web Application Development, instead they have evolved after the years. And developers in parallel have created web application frameworks that run into those languages to provide the real features that they need.\n\n
  * For example PHP started as a set of C libraries to build dynamic web pages and has evolved to a general-purpose interpreted language in which developers have created blog publishing applications and content management systems. Like WordPress or Drupal.\n\n
  * On September 2009 we begin the development of BinaryTiers, taking everything we have been learning about Web Application Architecture and Content Management Systems during all these years and recreates a true environtment for machine compiled web applications.\n\n

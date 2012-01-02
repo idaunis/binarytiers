@@ -2,16 +2,16 @@ ABOUT BINARYTIERS
 -----------------
 
 BinaryTiers is an open source, high-performance C++ web application framework
-that implements the Model-View-Controller (MVC) architecture pattern. 
+that implements the Model-View-Controller (MVC) architecture pattern.
 BinaryTiers is designed to be fast, robust, secure and easy to scale.
 
-BinaryTiers is designed keeping processing time in mind, saving energy and 
+BinaryTiers is designed keeping processing time in mind, saving energy and
 computing resources. BinaryTiers web applications range from personal blogs to
 large social networking websites.
 
-BinaryTiers framework is organized in a set of highly optimized C++ functions 
-that compile your web application in a single and portable executable, 
-allowing the creation of high performance cross-platform machine compiled web 
+BinaryTiers framework is organized in a set of highly optimized C++ functions
+that compile your web application in a single and portable executable,
+allowing the creation of high performance cross-platform machine compiled web
 applications.
 
 ARCHITECTURE PATTERN
@@ -19,18 +19,18 @@ ARCHITECTURE PATTERN
 
 BinaryTiers implements the architecture pattern Model-View-Controller (MVC)
 
-Models encapsulate the business logic and the data objects of your web 
-application, in BinaryTiers models are normally backed by a data store. 
-Models can be easily extended and they permit and independent development, 
+Models encapsulate the business logic and the data objects of your web
+application, in BinaryTiers models are normally backed by a data store.
+Models can be easily extended and they permit and independent development,
 testing and maintenance.
 
 The View is composed of "themes" that are responsible for providing appropriate
-representations of your application interface. Themes are CPP files with 
+representations of your application interface. Themes are CPP files with
 embedded HTML.
 
-The Controllers are responsible for handling incoming HTTP requests and send 
-the response. This response can be processed by the View, or sent directly to 
-the output in order to generate XML, JSON, etc. Controllers can provide a 
+The Controllers are responsible for handling incoming HTTP requests and send
+the response. This response can be processed by the View, or sent directly to
+the output in order to generate XML, JSON, etc. Controllers can provide a
 direct response or a pre-processed response, commonly used in form validations.
 
 GETTING STARTED
